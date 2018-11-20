@@ -8,6 +8,7 @@ brew install \
 	git \
 	tig \
 	vim --with-lua \
+	composer \
 	neovim \
 	fish \
 	tmux \
