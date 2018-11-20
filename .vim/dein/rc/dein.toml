@@ -1,0 +1,75 @@
+# plugins in this file are read every time
+
+[[plugins]]
+repo = 'Shougo/dein.vim'
+
+# easy comment out
+[[plugins]]
+repo = 'tomtom/tcomment_vim'
+
+# change "" , '' , () , and more
+[[plugins]]
+repo = 'tpope/vim-surround'
+
+[[plugins]]
+repo = 'Shougo/context_filetype.vim'
+
+[[plugins]]
+repo = 'osyo-manga/vim-precious'
+depends = ['context_filetype.vim']
+
+
+[[plugins]]
+repo = 'Townk/vim-autoclose'
+
+[[plugins]]
+repo = 'vim-airline/vim-airline'
+hook_add = '''
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_section_z = airline#section#create(['windowswap', '%3p%% ', 'linenr', ':%3v'])
+let g:airline#extensions#hunks#enabled = 0
+'''
+
+[[plugins]]
+repo = 'vim-airline/vim-airline-themes'
+depends = ['vim-airline']
+hook_add = '''
+	let g:airline_theme = 'jellybeans'
+'''
+
+[[plugins]]
+repo = 'ConradIrwin/vim-bracketed-paste'
+
+# for Git
+[[plugins]]
+repo = 'tpope/vim-fugitive'
+
+[[plugins]]
+repo = 'w0rp/ale'
+hook_add = '''
+	let g:ale_sign_column_always = 1
+	let g:ale_sign_error = 'e>'
+	let g:ale_linters = {'go': ['gofmt']}
+'''
+
+# ---------- color schemes ----------------
+
+[[plugins]]
+repo = 'morhetz/gruvbox'
+hook_add = '''
+	autocmd VimEnter * nested colorscheme gruvbox
+'''
+
+
+# ---------- other languages --------------
+
+# for Elixir
+[[plugins]]
+repo = 'elixir-lang/vim-elixir'
+
+# window resize
+[[plugins]]
+repo = 'simeji/winresizer'
+hook_add = '''
+let g:winresizer_start_key = '<C-W><C-R>'
+'''

@@ -1,0 +1,22 @@
+[user]
+	name = tksn-jp
+	email = tk5nj9@gmail.com
+[color]
+	ui = true
+[core]
+	excludesfile = ~/.gitignore_global
+	editor = nvim
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[alias]
+	co = checkout
+	st = status
+	br = branch
+	ci = commit
+[commit]
+	template = ~/.stCommitMsg
+
