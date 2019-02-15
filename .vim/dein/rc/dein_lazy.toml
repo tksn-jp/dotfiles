@@ -136,7 +136,5 @@ repo = 'dhruvasagar/vim-table-mode'
 on_ft = ['markdown', 'md', 'text', 'rst']
 hook_source = '''
 	let g:table_mode_corner='|'
-	let g:table_mode_corner_corner='+'
-	let g:table_mode_header_fillchar='='
 '''
 
