@@ -8,6 +8,7 @@ hook_source = '''
 	let g:deoplete#enable_ignore_case = 1
 	let g:deoplete#enable_smart_case = 1
 '''
+build = ':UpdateRemotePlugins'
 
 [[plugins]]
 repo = 'padawan-php/deoplete-padawan'
@@ -83,6 +84,23 @@ on_ft = 'fish'
 repo = 'slashmili/alchemist.vim'
 on_ft = 'elixir'
 depends = ['vim-elixir', 'deoplete.nvim']
+
+[[plugins]]
+repo = 'autozimu/LanguageClient-neovim'
+rev = 'next'
+build = 'bash install.sh'
+hook_source = '''
+	set hidden
+'''
+hook_post_source = '''
+	noremap gd :call LanguageClient#textDocument_definition()<CR>
+	noremap <C-t> :call LanguageClient#textDocument_rename()<CR>
+	" depend on go-langserver, install this:
+	" go get -u github.com/sourcegraph/go-langserver
+	let g:LanguageClient_serverCommands = {'go': [$GOPATH.'/bin/go-langserver','-format-tool','gofmt','-lint-tool','golint']}
+'''
+[[plugins]]
+repo = 'junegunn/fzf'
 
 [[plugins]]
 repo = 'Shougo/defx.nvim'
